@@ -1,0 +1,243 @@
+.admin-container {
+  width: 100vw;
+  height: 100vh;
+  background-image: url('/heroimage.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow-y: auto;
+}
+
+.admin-container::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.6);
+  z-index: 1;
+}
+
+.admin-content {
+  position: relative;
+  z-index: 2;
+  color: white;
+  max-width: 800px;
+  width: 90%;
+  padding: 2rem;
+}
+
+/* Login Form */
+.login-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.login-form h2 {
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+  font-weight: 300;
+}
+
+.password-input {
+  padding: 1rem 1.5rem;
+  font-size: 1.1rem;
+  border: 2px solid white;
+  background: transparent;
+  color: white;
+  min-width: 300px;
+  text-align: center;
+  margin-bottom: 1.5rem;
+  transition: all 0.3s ease;
+}
+
+.password-input::placeholder {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.password-input:focus {
+  outline: none;
+  border-color: white;
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.login-btn {
+  background: transparent;
+  color: white;
+  border: 3px solid white;
+  padding: 1rem 2rem;
+  font-size: 1.1rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  min-width: 200px;
+}
+
+.login-btn:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.error-message {
+  color: #ff6b6b;
+  margin-top: 1rem;
+  font-size: 1rem;
+}
+
+/* Admin Dashboard */
+.admin-header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.admin-header h1 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  font-weight: 300;
+}
+
+.admin-header p {
+  font-size: 1.2rem;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+/* Emails List */
+.emails-list {
+  margin-bottom: 2rem;
+  max-height: 60vh;
+  overflow-y: auto;
+  padding-right: 1rem;
+}
+
+.emails-list::-webkit-scrollbar {
+  width: 8px;
+}
+
+.emails-list::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 4px;
+}
+
+.emails-list::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: 4px;
+}
+
+.emails-list::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.5);
+}
+
+.no-emails {
+  text-align: center;
+  font-size: 1.2rem;
+  color: rgba(255, 255, 255, 0.7);
+  padding: 2rem;
+}
+
+.loading {
+  text-align: center;
+  font-size: 1.2rem;
+  color: rgba(255, 255, 255, 0.7);
+  padding: 2rem;
+}
+
+.emails-grid {
+  display: grid;
+  gap: 1rem;
+}
+
+.email-card {
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 8px;
+  padding: 1.5rem;
+  backdrop-filter: blur(10px);
+  transition: all 0.3s ease;
+}
+
+.email-card:hover {
+  background: rgba(255, 255, 255, 0.15);
+  transform: translateY(-2px);
+}
+
+.email-address {
+  font-size: 1.1rem;
+  font-weight: 500;
+  margin-bottom: 0.5rem;
+  color: white;
+}
+
+.email-date {
+  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+/* Refresh Button */
+.refresh-btn {
+  background: transparent;
+  color: white;
+  border: 2px solid white;
+  padding: 0.8rem 1.5rem;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  display: block;
+  margin: 0 auto;
+  border-radius: 4px;
+}
+
+.refresh-btn:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.refresh-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .admin-content {
+    width: 95%;
+    padding: 1rem;
+  }
+  
+  .admin-header h1 {
+    font-size: 2.5rem;
+  }
+  
+  .password-input {
+    min-width: 250px;
+  }
+  
+  .emails-list {
+    max-height: 50vh;
+  }
+}
+
+@media (max-width: 480px) {
+  .admin-header h1 {
+    font-size: 2rem;
+  }
+  
+  .password-input {
+    min-width: 220px;
+    font-size: 1rem;
+  }
+  
+  .login-btn {
+    font-size: 1rem;
+    padding: 0.9rem 1.8rem;
+  }
+} 
